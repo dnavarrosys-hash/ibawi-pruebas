@@ -1,7 +1,7 @@
 /**
  * Inicialización de Librerías y Funcionalidades
  */
-document.addEventListener('DOMContentLoaded', () => { // <-- Abre el listener DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => { 
     
     // Inicializar AOS (Animate On Scroll)
     AOS.init({
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => { // <-- Abre el listener DO
     });
 
     // Inicializar PureCounter (para estadísticas)
-    try { // Añadimos try-catch por si la librería no carga
+    try { 
        new PureCounter();
     } catch (e) {
        console.error("Error initializing PureCounter:", e);
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => { // <-- Abre el listener DO
     }
     // --- FIN CÓDIGO MODAL EDUCACIÓN ---
 
-    // === CÓDIGO MÁS DIRECTO PARA CIERRE NAVBAR MÓVIL ===
+    // === CÓDIGO PARA CIERRE NAVBAR MÓVIL ===
     const navbarToggler = document.querySelector('.navbar-toggler');
     const collapsibleMenu = document.querySelector('#navbarNav');
 
