@@ -1,4 +1,4 @@
-/* ---- 1. Importación de Fuentes (Tus rutas) ---- */
+/* ---- 1. Importación de Fuentes---- */
 @font-face {
     font-family: 'Gotham Bold Rounded';
     src: url('../fonts/gotham-bold-rounded.otf') format('opentype');
@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 
 section {
     padding: 60px 0;
-    overflow: hidden; /* Para que AOS funcione correctamente */
+    overflow: hidden;
 }
 
 .section-bg-gray {
@@ -103,7 +103,7 @@ section {
 }
 
 
-/* ---- 3. Navbar (CON ANIMACIÓN DE SUBRAYADO, FONDO MÓVIL y HOVER DROPDOWN) ---- */
+/* ---- 3. Navbar ---- */
 .navbar {
     height: 70px;
 }
@@ -140,7 +140,7 @@ section {
 .navbar-nav .nav-link.active::after {
     transform: scaleX(1);
 }
-.navbar-nav .nav-link .bi-house-door-fill { /* Estilo específico para el ícono de casa si lo usas */
+.navbar-nav .nav-link .bi-house-door-fill {
     line-height: 1;
     position: relative;
     top: -2px;
@@ -148,7 +148,7 @@ section {
 .dropdown-item {
     font-family: var(--font-body);
     color: var(--ibawi-blue);
-    transition: background-color 0.3s ease, color 0.3s ease; /* Añadido para suavidad */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .dropdown-item:hover {
     background-color: var(--ibawi-blue); /* Fondo azul en hover */
@@ -159,40 +159,40 @@ section {
 @media (max-width: 991.98px) { /* Se aplica solo en pantallas menores a 'lg' (Bootstrap 5) */
     .navbar .navbar-collapse {
         background-color: var(--ibawi-white); /* Fondo blanco */
-        border-top: 1px solid #eee; /* Línea separadora sutil */
-        margin-top: 10px; /* Espacio arriba */
-        padding: 15px; /* Espacio interno */
-        border-radius: 8px; /* Bordes redondeados */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra ligera */
+        border-top: 1px solid #eee;
+        margin-top: 10px; 
+        padding: 15px;
+        border-radius: 8px; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
     }
     .navbar .navbar-nav .nav-link {
         padding: 8px 0; /* Ajuste de padding vertical */
     }
     .navbar .navbar-nav .nav-link::after {
-        display: none; /* Oculta la línea de subrayado en móvil */
+        display: none;
     }
     .navbar .dropdown-menu {
-        box-shadow: none; /* Quita sombra extra al dropdown interno */
+        box-shadow: none; 
         border: none;
-        padding-left: 15px; /* Indenta los items del dropdown */
+        padding-left: 15px; 
     }
-    .navbar .dropdown-item:hover { /* Mantenemos hover original en móvil */
+    .navbar .dropdown-item:hover {
          background-color: var(--ibawi-gray);
          color: var(--ibawi-blue-dark);
     }
 }
 
 /* Dropdown en Hover para Desktop */
-@media (min-width: 992px) { /* Se aplica solo en pantallas 'lg' y mayores */
+@media (min-width: 992px) {
     .navbar .nav-item.dropdown:hover .dropdown-menu {
-        display: block; /* Muestra el menú */
-        margin-top: 0; /* Elimina espacio extra si Bootstrap lo añade */
-        opacity: 0; /* Empieza invisible */
-        visibility: hidden; /* Empieza oculto */
-        transform: translateY(10px); /* Empieza ligeramente abajo */
-        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Transición suave */
+        display: block;
+        margin-top: 0; 
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     }
-    /* Esta regla debe repetirse para aplicar los estilos finales del hover */
+
     .navbar .nav-item.dropdown:hover .dropdown-menu {
         opacity: 1; /* Hace visible */
         visibility: visible; /* Hace accesible */
@@ -207,19 +207,17 @@ section {
 /* === FIN NAVBAR === */
 
 
-/* ---- 4. Header (Hero Section) (ACTUALIZADO CON CURVA SVG REFERENCIADA) ---- */
-/* ... (Estilos del Header sin cambios) ... */
-/* ---- 4. Header (Hero Section) (LOGO FLOTANTE SOBRE CURVA) ---- */
+/* ---- 4. Header ---- */
 #header {
     width: 100%;
     min-height: 90vh; 
-    /* background: var(--ibawi-blue); <-- ELIMINADO */
+    /* background: var(--ibawi-blue);
     color: var(--ibawi-white);
-    position: relative; /* Contexto para imagen absoluta y ::before */
+    position: relative; 
     display: flex; 
     align-items: center; 
-    /* clip-path: url(#header-wave-curve); <-- ELIMINADO DEL CONTENEDOR PRINCIPAL */
-    overflow: visible; /* Permitimos que la imagen se salga */
+    /* clip-path: url(#header-wave-curve);
+    overflow: visible; 
     padding-bottom: 80px; 
     padding-top: 50px; 
 }
@@ -234,8 +232,7 @@ section {
     height: 100%;
     background: var(--ibawi-blue); /* Fondo azul */
     clip-path: url(#header-wave-curve); /* CURVA APLICADA AQUÍ */
-    z-index: -1; /* Detrás de todo */
-    /* Quitamos la animación de ola por ahora para simplificar, puedes añadirla si quieres */
+    z-index: -1;
 }
 
 #header h1 {
@@ -255,10 +252,10 @@ section {
     color: var(--ibawi-white);
     font-family: var(--font-body);
     font-size: 18px;
-    position: relative; /* Asegura que el texto esté sobre la imagen */
-    z-index: 2;         /* Asegura que el texto esté sobre la imagen */
+    position: relative; 
+    z-index: 2;   
 }
-/* Aseguramos que los botones también estén encima */
+
 #header .d-flex {
     position: relative; 
     z-index: 2;
@@ -300,43 +297,38 @@ section {
     background: var(--ibawi-white);
     color: var(--ibawi-blue);
 }
-/* Botón Outline no está en header, lo dejamos fuera */
 
-/* MODIFICADO: Imagen posicionada absolutamente */
+
 .hero-img img {
     position: absolute;
-    /* Ajusta 'right' para controlar cuánto se pega/sale del borde */
-    right: 5%; /* Por ejemplo, 5% desde el borde derecho */
-    /* Ajusta 'top' o 'bottom' para la posición vertical */
-    bottom: -0.5; /* Lo alineamos con la parte inferior del header (antes de la curva visual) */
-    /* Ajusta 'height' para el tamaño deseado */
-    height: 150%; /* Altura relativa al header */
-    width: auto; /* Mantiene proporción */
-    max-width: 200%; /* Limita el ancho */
-    opacity: 0.7; /* Opacidad más baja */     
+
+    right: 5%;
+    bottom: -0.5;
+    height: 150%; 
+    width: auto;
+    max-width: 200%;
+    opacity: 0.7;    
     display: block;  
-    z-index: 1; /* Encima del ::before pero detrás del texto (z-index: 2) */
-    /* Transform-origin por si quieres añadir rotación o escala en el futuro */
+    z-index: 1; 
     transform-origin: bottom right; 
-    /* Quita cualquier transform anterior si lo había */
     transform: none; 
 }
 
-/* Media query para comportamiento en móvil */
+
 @media (max-width: 991.98px) {
     #header {
-        overflow: hidden; /* Volvemos a ocultar en móvil */
+        overflow: hidden;
         padding-bottom: 30px; 
     }
     .hero-img img {
-        position: static; /* Vuelve al flujo normal */
+        position: static; 
         height: auto;     
-        max-height: 250px; /* Más pequeño en móvil */
+        max-height: 250px; 
         width: 60%;       
         max-width: 300px; 
         margin: 0 auto 30px auto; 
-        opacity: 0.85; /* Un poco menos transparente en móvil */
-        z-index: auto; /* Resetea z-index */
+        opacity: 0.85; 
+        z-index: auto; 
     }
     #header .row {
         text-align: center; 
@@ -344,13 +336,10 @@ section {
     #header .d-flex {
         justify-content: center; 
     }
-     /* Ocultamos ::before en móvil si la curva causa problemas de layout */
-    /* #header::before { display: none; } */ 
 }
 /* === FIN HEADER === */
 
 /* ---- 5. ESTILOS DE SECCIONES ---- */
-/* ... (Resto de los estilos de las secciones sin cambios) ... */
 #nosotros .about-img-layout {
     position: relative;
 }
@@ -760,26 +749,20 @@ section {
 }
 
 
-/* == NUEVO: Estilos de la Sección Contacto (Fondo Gris Claro) == */
+/* Estilos de la Sección Contacto (Fondo Gris Claro) == */
 #contacto {
-    /* CAMBIO: Fondo gris claro */
     background: var(--ibawi-gray); 
-    /* CAMBIO: Texto oscuro por defecto */
     color: var(--ibawi-text-dark); 
     position: relative; 
 }
 
-/* Ajustamos el título centrado para la sección de contacto */
 #contacto .section-title-center span {
-    /* Mantenemos el color azul para el subtítulo */
     color: var(--ibawi-blue); 
 }
 #contacto .section-title-center h2 {
-    /* Título principal en color oscuro */
     color: var(--ibawi-text-dark); 
 }
 #contacto .section-title-center p {
-     /* Párrafo en color gris oscuro estándar */
     color: #6c757d;
 }
 
@@ -796,7 +779,6 @@ section {
 }
 .contact-info-item i {
     font-size: 24px;
-    /* CAMBIO: Icono azul sobre fondo gris muy claro */
     color: var(--ibawi-blue); 
     background: rgba(48, 127, 226, 0.1); 
     width: 48px;
@@ -810,14 +792,12 @@ section {
 }
 .contact-info-item h4 {
     font-size: 18px;
-     /* CAMBIO: Título oscuro */
     color: var(--ibawi-text-dark);
     font-weight: 600;
     margin: 0 0 5px 0;
 }
 .contact-info-item p {
     font-size: 15px;
-     /* CAMBIO: Texto gris oscuro */
     color: #555; 
     margin: 0;
     font-family: var(--font-body);
@@ -825,7 +805,6 @@ section {
 
 .contact-social-links h4 {
     font-size: 18px;
-     /* CAMBIO: Título oscuro */
     color: var(--ibawi-text-dark); 
     font-weight: 600;
     margin-bottom: 10px;
@@ -833,7 +812,6 @@ section {
 .contact-social-links a {
     font-size: 20px;
     display: inline-block;
-    /* CAMBIO: Icono azul sobre fondo gris claro */
     background: rgba(48, 127, 226, 0.1); 
     color: var(--ibawi-blue); 
     line-height: 1;
@@ -846,26 +824,26 @@ section {
     transition: all 0.3s ease;
 }
 .contact-social-links a:hover {
-    /* CAMBIO: Hover azul */
     background: var(--ibawi-blue); 
     color: var(--ibawi-white); 
 }
 
 
 /* ========================================================= */
-/* ==== REEMPLAZO: Footer (ACTUALIZADO Estilo Multi-Columna) ==== */
+/* ==== Footer ==== */
 /* ========================================================= */
-/* (Asegúrate de borrar las reglas #footer anteriores) */
+
+
 #footer {
-    background: rgb(48, 127, 226); /* Fondo azul oscuro */
-    color: rgba(255, 255, 255, 0.8); /* Texto blanco semitransparente por defecto */
+    background: rgb(48, 127, 226);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
 }
 #footer .footer-top {
-    padding: 60px 0 30px 0; /* Espacio superior e inferior */
+    padding: 60px 0 30px 0; 
 }
 #footer .footer-about .logo img {
-    max-height: 45px; /* Ajusta si es necesario */
+    max-height: 45px;
 }
 #footer .footer-about p {
     font-family: var(--font-body);
@@ -878,7 +856,7 @@ section {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1); /* Círculo semitransparente */
+    background-color: rgba(255, 255, 255, 0.1); 
     color: var(--ibawi-white);
     margin-right: 8px;
     transition: background-color 0.3s ease;
@@ -905,7 +883,7 @@ section {
     display: block;
     width: 30px;
     height: 2px;
-    background: var(--ibawi-blue); /* Línea azul claro */
+    background: var(--ibawi-blue); 
     bottom: 0;
     left: 0;
 }
@@ -931,8 +909,8 @@ section {
 }
 #footer .footer-contact-col .info-item i {
     font-size: 20px;
-    color: var(--ibawi-blue); /* Icono azul claro */
-    background: var(--ibawi-white); /* Círculo blanco */
+    color: var(--ibawi-blue); 
+    background: var(--ibawi-white); 
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -955,7 +933,7 @@ section {
 #footer .footer-bottom {
     padding: 20px 0;
     margin-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea separadora */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 #footer .footer-bottom p {
     font-size: 14px;
@@ -966,7 +944,7 @@ section {
 /* === FIN Footer === */
 
 /* ============================================= */
-/* ==== NUEVO: Estilos Portfolio (Dentro del Modal) ==== */
+/* ==== Estilos Portfolio  ==== */
 /* ============================================= */
 .portfolio-filters {
   padding: 0;
@@ -1002,19 +980,18 @@ section {
 }
 
 .portfolio-container-modal {
-    /* Ajusta el padding si es necesario dentro del modal */
     padding: 0 10px; 
 }
 
 .portfolio-item {
   position: relative;
   overflow: hidden;
-  border-radius: 10px; /* Redondeo de la tarjeta */
-  margin-bottom: 24px; /* Espacio entre tarjetas */
+  border-radius: 10px;
+  margin-bottom: 24px; 
 }
 
 .portfolio-item img {
-  transition: transform 0.4s ease; /* Transición para el zoom */
+  transition: transform 0.4s ease;
 }
 
 .portfolio-info {
@@ -1024,10 +1001,10 @@ section {
   bottom: 0;
   z-index: 3;
   right: 0;
-  background: rgba(48, 127, 226, 0.9); /* Overlay azul */
+  background: rgba(48, 127, 226, 0.9); 
   padding: 15px 20px;
   transition: all 0.3s ease-in-out;
-  transform: translateY(10px); /* Empieza ligeramente abajo */
+  transform: translateY(10px); 
 }
 
 .portfolio-info h4 {
@@ -1045,7 +1022,7 @@ section {
 
 .portfolio-info .preview-link {
   position: absolute;
-  right: 45px; /* Espacio para el ícono */
+  right: 45px;
   bottom: 15px;
   z-index: 4;
   color: rgba(255, 255, 255, 0.7);
@@ -1065,11 +1042,10 @@ section {
 }
 
 .portfolio-item:hover img {
-  transform: scale(1.1); /* Efecto zoom */
+  transform: scale(1.1); 
 }
 
-/* Estilos específicos GLightbox */
 .glightbox-clean .gslide-description {
-  background: rgba(0, 0, 0, 0.8); /* Fondo oscuro para descripción GLightbox */
+  background: rgba(0, 0, 0, 0.8);
 }
 /* === FIN Estilos Portfolio === */
